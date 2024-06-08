@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 28a95e94ae1684b44999b81da85c370c
+  - enabled: 1
+    path: Assets/Scenes/Cutscene1.unity
+    guid: 2638daa8d930f644abb0e60fe6a56fcf
+  - enabled: 1
+    path: Assets/Scenes/Cutscene2.unity
+    guid: 26ba066bfbc91c94f91a5f998f7e7c66
+  - enabled: 1
+    path: Assets/Scenes/Cutscene3.unity
+    guid: 415e732963954e245bcad07b2b880233
+  - enabled: 1
+    path: Assets/Scenes/Cutscene4.unity
+    guid: 1a077dc0437deab4c83e466104b97b14
+  - enabled: 1
+    path: Assets/Scenes/Cutscene5.unity
+    guid: 922c07ef9299fb24ea77cebbb18b465f
+  - enabled: 1
+    path: Assets/Scenes/Fase1.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Cutscene6.unity
+    guid: 5555f0d38f1f83f45be66906462c5214
+  - enabled: 1
+    path: Assets/Scenes/Cutscene7.unity
+    guid: e9cc38144ae2e274fb3012ce38163798
+  - enabled: 1
+    path: Assets/Scenes/Fase2.unity
+    guid: a37689c166f72b64eb47c0b7e7cc7ab7
+  - enabled: 1
+    path: Assets/Scenes/Cutscene8.unity
+    guid: c5fa8d71808ae8042b85e052444d4396
+  - enabled: 1
+    path: Assets/Scenes/Cutscene9.unity
+    guid: 4f4618ebd5c453947a84001e9af1a626
+  - enabled: 1
+    path: Assets/Scenes/Fase3.unity
+    guid: 58a089596815abb45bc6d678c53d61c2
+  - enabled: 1
+    path: Assets/Scenes/Cutscene10.unity
+    guid: a3ffc46649764534783796b2414cd7c4
+  - enabled: 1
+    path: Assets/Scenes/Fim.unity
+    guid: c5d77e9eaea5d514482d17d8edd34494
+  - enabled: 1
+    path: Assets/Scenes/GameOverFase1.unity
+    guid: 3f735ed611cd9434dad9a804f4b7da5e
+  - enabled: 1
+    path: Assets/Scenes/GameOverFase2.unity
+    guid: dd6b74f150047b04487b4a4bcb4aef7c
+  - enabled: 1
+    path: Assets/Scenes/GameOverFase3.unity
+    guid: 6f3cb8caa4cd0fe448381366e1c08fed
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: ce41d7ebf515ded41b1affc9776b0325
+  m_configObjects: {}
