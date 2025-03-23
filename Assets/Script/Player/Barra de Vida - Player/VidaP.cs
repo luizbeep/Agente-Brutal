@@ -1,58 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.SceneManagement;
 
 public class VidaP : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+    // Variáveis de vida
     private int vidaAtualP;
     public int vidaTotalP;
     public string cenaGameOver;
     public int danoMonstro;
 
-    [SerializeField] private BarraDeVidaP barraDeVidaP;
+    // Referência ao Canvas e à BarraDeVidaP
+    private BarraDeVidaP barraDeVidaP;
 
     void Start()
     {
-        vidaAtualP = vidaTotalP; // Atribuindo que quando iniciar o jogo o monstro terá vida completa
+        vidaAtualP = vidaTotalP; // Atribuindo que a vida inicial é o valor total
 
-        barraDeVidaP.AlterarBarraDeVidaP(vidaAtualP, vidaTotalP); // função para diminuir a barra de vida
-
+        // Encontrar o Canvas na cena e a BarraDeVidaP dentro dele
+        Canvas canvas = FindObjectOfType<Canvas>(); // Encontrar o Canvas na cena
+        if (canvas != null)
+        {
+            barraDeVidaP = canvas.GetComponentInChildren<BarraDeVidaP>(); // Encontrar BarraDeVidaP dentro do Canvas
+            if (barraDeVidaP != null)
+            {
+                barraDeVidaP.AlterarBarraDeVidaP(vidaAtualP, vidaTotalP); // Atualizar a barra de vida
+            }
+            else
+            {
+                Debug.LogError("BarraDeVidaP não encontrada no Canvas!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Canvas não encontrado na cena!");
+        }
     }
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (PlayerMovement.atingidoP == true) // condição para o monstro tomar dano, aqui no caso se apertado a tecla espaço ele recebe 10 de dano
+        // Verificar se o personagem foi atingido
+        if (PlayerMovement.atingidoP == true)
         {
             AplicarDanoP(danoMonstro);
             PlayerMovement.atingidoP = false;
         }
 
-        if (vidaAtualP <= 0) // condição para quando a vida se torne zero ou menos o monstro desapareça
+        // Verificar se a vida do herói acabou
+        if (vidaAtualP <= 0)
         {
-            Destroy(gameObject);
-            SceneManager.LoadScene(cenaGameOver);
-
+            Destroy(gameObject); // Destruir o personagem
+            SceneManager.LoadScene(cenaGameOver); // Carregar a cena de Game Over
         }
-
     }
 
-    private void AplicarDanoP(int dano) // aqui é para subtrair a vida atual do monstro aplicando o valor do método AplicarDano
+    private void AplicarDanoP(int dano)
     {
-        vidaAtualP -= dano;
+        vidaAtualP -= dano; // Subtrair o dano da vida atual
 
-        barraDeVidaP.AlterarBarraDeVidaP(vidaAtualP, vidaTotalP); 
-
+        // Atualizar a barra de vida se a referência à barra de vida for válida
+        if (barraDeVidaP != null)
+        {
+            barraDeVidaP.AlterarBarraDeVidaP(vidaAtualP, vidaTotalP);
+        }
     }
-
-    
-
-
-
 }
